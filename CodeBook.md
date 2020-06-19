@@ -1,7 +1,7 @@
 # Human Activity Recognition Using Smartphones Data Set
 
 This project is conducted as an assignment for the Coursera course *Getting and Cleaning Data*. It aims at restructuring the data set that can be found
-[here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones){target="_blank"}. This document is a code book that describes the variables, the data, and any transformations or work that I performed to clean up the data and obtain a tidy data set. In the following sections, I describe how the original data frames have been manipulated and converted into the final output. 
+[here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). This document is a code book that describes the variables, the data, and any transformations or work that I performed to clean up the data and obtain a tidy data set. In the following sections, I describe how the original data frames have been manipulated and converted into the final output. 
 
 ### First merging of data sets (task 1)
 In order to carry out this task I proceeded as follows:
@@ -15,7 +15,7 @@ In order to carry out this task I proceeded as follows:
 ### Feature selection (task 2)
 The assignment states:
 *Extracts only the measurements on the mean and standard deviation for each measurement.*  
-According to this enlightening [post](https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/){target="_blank"}, the criteria for selecting relevant features are somewhat vague and arbitrary in the assignment.
+According to this enlightening [post](https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/), the criteria for selecting relevant features are somewhat vague and arbitrary in the assignment.
 There is no ambiguity as far as the string <tt>std()</tt> is concerned.
 However, it is an open question whether the requirement refers only to the entries that include <tt>mean()</tt> at the end, or to all the entries with <tt>mean</tt>, even if it occurs in an earlier part of the name, e.g. <tt>fBodyAccMag-meanFreq()</tt>. I went for the latter option, which results in 79 features. The data contained in the folders <tt>Inertial Signals</tt> are not relevant and are therefore excluded from the process.
 
@@ -33,7 +33,7 @@ I noticed that keeping the dashes might cause some problems, for example when tr
 ### Creation of the final data set (task 5)
 The assignment states:
 *From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.*
-In order to do this, I reshaped the variable <tt>activity</tt> so as to form the second column of the new data frame. Since there are 30 subjects (21 in the train set and 9 in the test set) and 6 activities, the result is a data frame with 180 rows (30 x 6). For example, row 1 displays the mean of each feature (there are 79 features in total) for the activity *laying* for subject 1, and the value for the feature *tBodyAcc-mean-X* represents the mean of the different measurements of that variable for the combination subject 1 / activity=laying. This raises the question whether it makes sense to compute the mean of standard deviations. As suggested in the already mentioned [post](https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/){target="_blank"},
+In order to do this, I reshaped the variable <tt>activity</tt> so as to form the second column of the new data frame. Since there are 30 subjects (21 in the train set and 9 in the test set) and 6 activities, the result is a data frame with 180 rows (30 x 6). For example, row 1 displays the mean of each feature (there are 79 features in total) for the activity *laying* for subject 1, and the value for the feature *tBodyAcc-mean-X* represents the mean of the different measurements of that variable for the combination subject 1 / activity=laying. This raises the question whether it makes sense to compute the mean of standard deviations. As suggested in the already mentioned [post](https://thoughtfulbloke.wordpress.com/2015/09/09/getting-and-cleaning-the-assignment/),
 "it doesn’t matter, you are being asked to produce an average for each combination of subject, activity, and variable as a sign you can manipulate the data".
 
 
