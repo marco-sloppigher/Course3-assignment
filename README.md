@@ -1,7 +1,7 @@
 # Human Activity Recognition Using Smartphones Data Set
 
 This project is conducted as an assignment for the Coursera course *Getting and Cleaning Data*. It aims at restructuring a data set that can be found
-[here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).  
+[here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones){target="_blank"}.  
 This repository includes the following files:  
 
 1. <tt>run_analysis.R</tt>: the script that selects relevant features and manipulates the original data set so as to display the average of each variable for each *activity* and each *subject*  
